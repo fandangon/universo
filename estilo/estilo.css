@@ -1,0 +1,353 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Gantari&family=Inconsolata:wght@300&family=Roboto+Mono:wght@300&display=swap');
+
+/* Normalize */
+
+:root {
+    /* Variables */
+    --primary: #120d31;
+    --secondary: #FF5376;
+    --alternative: #302F4D;
+    --text-color: #2B2B2B;
+
+    /* Espacios */
+    --spacing-large: 6rem;
+    --spacing-medium: 2.4rem;
+    --spacing-small: 2rem;
+    --spacing-xsmall: 1rem;
+    
+    /* Fuentes */
+    --font-principal: 'Roboto Mono', monospace;
+    --font-title: 'Inconsolata', monospace;
+
+    /* Tamaño de fuentes */
+    --text-large: 5.2rem;
+    --text-medium: 2.2rem;
+    --text-base: 1.6rem;
+    --text-small: 1.4rem;
+}
+
+/* Reseteo del HTML */
+*::after,
+*::before,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-principal);
+    background-color: #120d31;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    font-family: var(--font-title);
+    color: var(--text-color);
+}
+
+img {
+    width: 100%;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-around;
+    /* Alineamos items */
+    align-items: center;
+    padding: var(--spacing-small) 0;
+    border-bottom: 2px solid var(--secondary);
+    background-color: rgb(90, 77, 105);
+}
+
+.header__img {
+    max-width: 80px;
+}
+
+.menu {
+    display: flex;
+    gap: var(--spacing-small);
+}
+
+.menu__link {
+    font-size: var(--text-medium);
+    padding: var(--spacing-xsmall) 1.2rem;
+    border: 2px solid rgba(255, 255, 255, 0);
+    transition: all 1s;
+}
+
+.menu__link:hover {
+    border-color: var(--text-base);
+}
+
+/* MAIN */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: var(--spacing-small);
+    margin-bottom: var(--spacing-small);
+    background-color: #ff965d;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    gap: var(--spacing-xsmall);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--spacing-xsmall);
+    flex: 1 1 clamp(300px, 30%, 400px);
+    padding: var(--spacing-medium)
+}
+
+.box__info {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-medium);
+    align-items: center;
+}
+
+.box__title {
+    font-family: var(--font-title);
+    font-size: var(--text-medium);
+    color: var(--primary);
+}
+
+.box__subtitle {
+    margin-top: 0.6rem;
+    color: var(--secondary);
+    font-size: var(--text-small);
+}
+
+.box__text {
+    margin-top: 1rem;
+    color: var(--text-color);
+    font-size: var(--text-base);
+}
+
+/* Info */
+.info {
+    display: flex;
+    padding: var(--spacing-large);
+    align-items: center;
+}
+
+.info__img {
+    flex: 1 1 50%;
+}
+
+.info__box {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-large);
+}
+
+.info__subtitle {
+    font-size: var(--text-large);
+    font-family: var(--font-title);
+    color: var(--primary);
+}
+
+.info__description {
+    font-size: var(--text-medium);
+    font-weight: 300;
+}
+
+/* FOOTER GRID */
+footer img {
+    width: 60px;    
+}
+
+footer h2 {
+    color: #fff;
+    font-family: var(--font-title);
+    font-size: var(--spacing-small);
+}
+
+.footer {
+    background-color: var(--alternative);
+    border-top: 2px solid var(--secondary);
+}
+
+
+.footer__container {
+    display: grid;
+    grid-template-columns: 100px ;
+    padding: 20px;
+    gap: 20px;
+    font-size: var(--text-small);
+}
+
+.footer__insta {
+    grid-area: 1 / 1;
+}
+
+.footer__whats {
+    grid-area: 2 / 1;
+}
+
+.footer__nasa {
+    grid-area: 3 / 1;
+}
+
+a {
+    font-size: var(--text-small);
+    color: #fff;
+}
+
+/* Galeria - GRID*/
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: var(--spacing-small);
+}
+
+.sol {
+    grid-column: 1 / 7;
+    margin-top: 10rem;
+}
+
+.mercurio {
+    grid-column: 7 / 13;
+    margin-top: 10rem;
+}
+
+.venus {
+    grid-column: 1 / 5;
+}
+
+.tierra {
+    grid-column: 5 / 9;
+}
+
+.jupiter {
+    grid-column: 9 / 13;
+    grid-row: 2 / 4;
+}
+
+.saturno {
+    grid-column: 1 / 9;
+}
+
+.neptuno {
+    grid-column: 9 / 13;
+    grid-row: 3 / 3;
+}
+
+@media screen and (max-width: 720px) {
+    header {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu__link {
+        font-size: var(--text-base);
+        padding: 0.5rem;
+    }
+    .info {
+        flex-direction: column;
+    }
+}
+
+@media  screen and (max-width: 575px) {
+    header {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu__link {
+        font-size: var(--text-base);
+        padding: 0.5rem;
+    }
+    .info {
+        padding: var(--spacing-small);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu__link {
+        font-size: var(--text-base);
+        padding: 0.5rem;
+    }
+    .gallery {
+        grid-template-rows: repeat(5, auto);
+    }
+    .venus {
+        grid-column: 1 / 7;
+        grid-row: 3;
+    }
+    .tierra {
+        grid-column: 7 / 13;
+        grid-row: 3;
+    }
+    .jupiter {
+        grid-column: 1 / 13;
+        grid-row: 2;
+        /* max-height: 100px; */
+    }
+    .saturno {
+        grid-column: 1 / 13;
+        grid-row: 4;
+    }
+    .neptuno {
+        grid-column: 1 / 13;
+        grid-row: 5;
+    }
+    .footer__container {
+        width: 20%;
+    }
+}
+
+@media screen and(max-width: 769px) {
+        header {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu__link {
+        font-size: var(--text-base);
+        padding: 0.5rem;
+    }
+    .box__text {
+        font-size: 2em;
+    }
+    .box__subtitle {
+        font-size: 2em;
+    }
+}
+
