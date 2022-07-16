@@ -1,0 +1,409 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Gantari&family=Inconsolata:wght@300&family=Roboto+Mono:wght@300&display=swap');
+
+/* Normalize */
+
+:root {
+    /* Variables */
+    --primary: #120d31;
+    --secondary: #FF5376;
+    --alternative: #302F4D;
+    --text-color: #2B2B2B;
+
+    /* Espacios */
+    --spacing-large: 6rem;
+    --spacing-medium: 2.4rem;
+    --spacing-small: 2rem;
+    --spacing-xsmall: 1rem;
+    
+    /* Fuentes */
+    --font-principal: 'Roboto Mono', monospace;
+    --font-title: 'Inconsolata', monospace;
+
+    /* Tamaño de fuentes */
+    --text-large: 5.2rem;
+    --text-medium: 2.2rem;
+    --text-base: 1.6rem;
+    --text-small: 1.4rem;
+}
+
+/* Reseteo del HTML */
+*::after,
+*::before,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-principal);
+    background-color: #120d31;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    font-family: var(--font-title);
+    color: var(--text-color);
+}
+
+.sol, .mercurio, .venus, .tierra,
+.marte, .jupiter, 
+.saturno, .urano, 
+.neptuno, .pluton {
+    animation: move 2s linear;
+}
+@keyframes move {
+    from {
+      left: 0;
+      transform: translateX(-100px);
+    }
+
+    to {
+      left: 100%;
+    }
+} 
+
+img {
+    width: 100%;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-around;
+    /* Alineamos items */
+    align-items: center;
+    padding: var(--spacing-small) 0;
+    border-bottom: 2px solid var(--secondary);
+    background-color: rgb(90, 77, 105);
+}
+
+.header__logo {
+    transform: rotate(-45deg);
+} 
+
+.header__img {
+    max-width: 80px;
+}
+
+.menu {
+    display: flex;
+    gap: var(--spacing-small);
+}
+
+.menu__link {
+    font-size: var(--text-medium);
+    padding: var(--spacing-xsmall) 1.2rem;
+    border: 2px solid rgba(255, 255, 255, 0);
+    transition: all 1s;
+}
+
+.menu__link:hover {
+    border-color: var(--text-base);
+}
+
+/* MAIN */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: var(--spacing-small);
+    margin-bottom: var(--spacing-small);
+    background-color: #ff965d;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    gap: var(--spacing-xsmall);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--spacing-xsmall);
+    flex: 1 1 clamp(300px, 30%, 400px);
+    padding: var(--spacing-medium)
+}
+
+.box__info {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-medium);
+    align-items: center;
+}
+
+.box__title {
+    font-family: var(--font-title);
+    font-size: var(--text-medium);
+    color: var(--primary);
+}
+
+.box__subtitle {
+    margin-top: 0.6rem;
+    color: var(--secondary);
+    font-size: var(--text-small);
+}
+
+.box__text {
+    margin-top: 1rem;
+    color: var(--text-color);
+    font-size: var(--text-base);
+}
+
+/* Info */
+.info {
+    display: flex;
+    padding: var(--spacing-large);
+    align-items: center;
+}
+
+.info__img {
+    flex: 1 1 50%;
+}
+
+.info__box {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-large);
+}
+
+.info__subtitle {
+    font-size: var(--text-large);
+    font-family: var(--font-title);
+    color: var(--primary);
+}
+
+.info__description {
+    font-size: var(--text-medium);
+    font-weight: 300;
+}
+
+/* FOOTER GRID */
+footer img {
+    width: 60px;    
+}
+
+footer h2 {
+    color: #fff;
+    font-family: var(--font-title);
+    font-size: var(--spacing-small);
+}
+
+.footer {
+    background-color: var(--alternative);
+    border-top: 2px solid var(--secondary);
+}
+
+.footer__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 20px;
+    align-content: center;
+    gap: 20px;
+    font-size: var(--text-small);
+}
+
+.footer__insta {
+    grid-area: 1 / 1;
+}
+
+.footer__whats {
+    grid-area: 1 / 2;
+}
+
+.footer__nasa {
+    grid-area: 1 / 3;
+}
+
+a {
+    font-size: var(--text-small);
+    color: #fff;
+}
+
+/* Galeria - GRID*/
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: var(--spacing-small);
+}
+
+.sol {
+    grid-column: 1 / 5;
+}
+
+.mercurio {
+    grid-column: 5 / 9;
+}
+
+.venus {
+    grid-column: 9 / 13;
+}
+
+.tierra {
+    grid-column: 1 / 5;
+}
+
+.marte {
+    grid-column: 5 / 9;
+
+}
+
+.jupiter {
+    grid-column: 9 / 13;
+}
+
+.saturno {
+    grid-column: 1 / 5;
+}
+
+.urano {
+    grid-column: 5 / 9;
+}
+
+.neptuno{
+    grid-column: 9 / 13;
+}
+
+.pluton {
+    grid-column: 1 / 8;
+}
+
+.galaxia {
+    grid-column: 1 / 13;
+}
+
+@media screen and (max-width: 879px) {
+    .info {
+        flex-direction: column;
+    }
+}
+
+@media  screen and (max-width: 640px) {
+    header {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu__link {
+        font-size: var(--text-base);
+        padding: 0.5rem;
+    }
+    .info {
+        padding: var(--spacing-small);
+    }
+    .sol {
+        grid-column: 1 / 7;
+    }    
+    .mercurio {
+        grid-column: 7 / 13;
+    }    
+    .venus {
+        grid-column: 1 / 7;
+    }    
+    .tierra {
+        grid-column: 7 / 13;
+    }    
+    .marte {
+        grid-column: 1 / 7;
+    }    
+    .jupiter {
+        grid-column: 7 / 13;
+    }    
+    .saturno {
+        grid-column: 1 / 7;
+    }    
+    .urano {
+        grid-column: 7 / 13;
+    }    
+    .neptuno{
+        grid-column: 1 / 7;
+    }    
+    .pluton {
+        grid-column: 7 / 13;
+    }    
+    .galaxia {
+        grid-column: 1 / 13;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu__link {
+        font-size: var(--text-base);
+        padding: 0.5rem;
+    }
+    .gallery {
+        grid-template-rows: repeat(5, auto);
+    }
+    .sol {
+        grid-column: 1 / 13;
+    }    
+    .mercurio {
+        grid-column: 1 / 13;
+    }    
+    .venus {
+        grid-column: 1 / 13;
+    }    
+    .tierra {
+        grid-column: 1 / 13;
+    }    
+    .marte {
+        grid-column: 1 / 13;
+    
+    }    
+    .jupiter {
+        grid-column: 1 / 13;
+    }    
+    .saturno {
+        grid-column: 1 / 13;
+    }    
+    .urano {
+        grid-column: 1 / 13;
+    }    
+    .neptuno{
+        grid-column: 1 / 13;
+    }    
+    .pluton {
+        grid-column: 1 / 13;
+    }    
+    .galaxia {
+        grid-column: 1 / 13;
+    }
+    .footer__container {
+        width: 20%;
+    }
+}
+@media screen and(max-width: 769px) {
+    .box__text {
+        font-size: 2em;
+    }
+    .box__subtitle {
+        font-size: 2em;
+    }
+}
+
